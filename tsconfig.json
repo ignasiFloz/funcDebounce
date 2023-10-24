@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS", // O "ESNext" si prefieres ESM
+    "outDir": "./src",  // Carpeta de salida para archivos compilados
+    "rootDir": "./src",  // Carpeta raíz de archivos fuente TypeScript
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
