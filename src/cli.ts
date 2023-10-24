@@ -1,6 +1,5 @@
-
-import { Command } from 'commander';
-import { debounce } from '../src/fncDebounce.js'; // Importa la función debounce desde tu archivo fncDebounce.ts
+const { Command } = require('commander');
+const { debounce } = require('../src/fncDebounce.js'); // Importa la función debounce desde tu archivo fncDebounce.ts
 const program = new Command();
 
 program
@@ -10,7 +9,7 @@ program
 program
   .command('action <delay> <message>')
   .description('Ejecutar una acción después de un retraso personalizado')
-  .action((delay, message) => {
+  .action((delay: string, message: string) => {
     const delayMs = parseInt(delay);
     const debouncedAction = debounce(() => {
       console.log(`¡Acción ejecutada: ${message}`);
@@ -23,6 +22,3 @@ program
   });
 
 program.parse(process.argv);
-
-//node .\cli.js  action 3000 "Mensaje de prueba"
-//node .\cli.js

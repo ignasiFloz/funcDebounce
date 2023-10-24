@@ -1,4 +1,4 @@
-export function debounce(func, delay) {
+function debounce(func, delay) {
     let timer;
     return (...args) => {
         clearTimeout(timer);
@@ -7,3 +7,5 @@ export function debounce(func, delay) {
         }, delay);
     };
 }
+
+module.exports = { debounce };
